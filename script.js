@@ -60,3 +60,12 @@ const keyboardMap = {
     ".": () => elements.commaButton.click(),
 };
 
+for (let i = 0; i <= 9; i++) {
+  keyboardMap[i.toString()] = () => {
+    const numberButton = Array.from(elements.numberButtons).find(
+      (button) => button.textContent === i.toString()
+    );
+    if (numberButton) numberButton.click();
+  };
+}
+
