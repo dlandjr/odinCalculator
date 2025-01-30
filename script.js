@@ -38,3 +38,14 @@ const elements = {
     operatorButtons: document.querySelectorAll(".operator"),
     backspaceButton: document.querySelector(".backspace"),
 };
+
+const keyboardMap = {
+  Enter: () => elements.equalsButton.click(),
+  Backspace: () => elements.backspaceButton.click(),
+  Escape: () => elements.clearAllButton.click(),
+  "+": () => elements.operatorButtons[3].click(),
+  "-": () => elements.operatorButtons[2].click(),
+  "*": () => elements.operatorButtons[1].click(),
+  "/": () => elements.operatorButtons[0].click(),
+  ".": () => elements.commaButton.click(),
+};
