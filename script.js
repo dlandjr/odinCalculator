@@ -49,3 +49,22 @@ const keyboardMap = {
   "/": () => elements.operatorButtons[0].click(),
   ".": () => elements.commaButton.click(),
 };
+
+
+// Loop through numbers 0 to 9 and add them to the keyboard map
+for (let i = 0; i <= 9; i++) {
+  keyboardMap[i.toString()] = () => {
+    // Convert the list of number buttons into an array
+    const numberButtonsArray = Array.from(elements.numberButtons);
+
+    // Find the button that matches the pressed number key
+    const numberButton = numberButtonsArray.find(
+      (button) => button.textContent === number.toString()
+    );
+
+    // If a matching button is found, simulate a button click
+    if (numberButton) {
+      numberButton.click();
+    }
+  };
+}
