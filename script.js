@@ -33,10 +33,18 @@ const elements = {
     clearEntryButton: document.querySelector(".clear-entry"),
     plusMinusButton: document.querySelector(".plus-minus"),
     decimalButton: document.querySelector(".decimal"),
-    display: document.querySelector(".result-display"),
+    resultsDisplay: document.querySelector(".results-display"),
     currentDisplay: document.querySelector(".current-display"),
     operatorButtons: document.querySelectorAll(".operator"),
     backspaceButton: document.querySelector(".backspace"),
+};
+
+const currentDisplay = (content) => {
+  elements.currentDisplay.textContent = content;
+};
+
+const resultsDisplay = (content) => {
+  elements.resultsDisplay.textContent = content;
 };
 
 const keyboardMap = {
@@ -76,3 +84,4 @@ document.addEventListener("keydown", (event) => {
     handler();  
   }
 });
+
