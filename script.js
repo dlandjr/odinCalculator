@@ -68,3 +68,11 @@ for (let i = 0; i <= 9; i++) {
     }
   };
 }
+
+// Listen for when a key is pressed on the keyboard
+document.addEventListener("keydown", (event) => {
+  const handler = keyboardMap[event.key];
+  if (handler) {
+    handler();  
+  }
+});
