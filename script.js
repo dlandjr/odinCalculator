@@ -87,15 +87,21 @@ document.addEventListener("keydown", (event) => {
 
 elements.numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    if (
-      button.classList.contains("decimal") &&
-      elements.currentDisplay.textContent.includes(".")
-    ) {
+    const buttonText = button.textContent;
+
+    if (button.classList.contains("decimal") &&
+      elements.currentDisplay.textContent.includes(".")) {
       return;
     }
 
-    updateCurrentDisplay(elements.currentDisplay.textContent + button.textContent);
+    updateCurrentDisplay(elements.currentDisplay.textContent + buttonText);
   });
+});
+
+elements.decimalButton.addEventListener("click", () => {
+  if (!elements.currentDisplay.textContent.includes(".")) {
+    updateCurrentDisplay(elements.currentDisplay.textContent + ".");
+  }
 });
 
 elements.operatorButtons.forEach((button) => {
